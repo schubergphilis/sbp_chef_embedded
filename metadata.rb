@@ -4,11 +4,9 @@ maintainer_email 'svanharmelen@schubergphilis.com'
 license          'Apache 2.0'
 description      'Enables the system wide use of the Chef embedded packages like ruby and perl'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.1.0'
+version          '0.1.1'
 
 supports         'redhat'
 supports         'centos'
 supports         'windows'
 supports         'mac_os_x'
-supports         'centos'
-

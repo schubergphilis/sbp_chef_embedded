@@ -18,8 +18,8 @@
 # limitations under the License.
 #
 
-unless Chef::Config.on_windows?
-  if platform_family?("mac_os_x")
+unless platform_family?('windows')
+  if platform_family?('mac_os_x')
     template '/etc/paths.d/chef-embedded-bin.sh' do
       source 'chef-embedded-bin.sh.erb'
       mode 0644
