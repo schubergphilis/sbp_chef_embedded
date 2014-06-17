@@ -1,7 +1,6 @@
 #
-# Author:: Sander van Harmelen <svanharmelen@schubergphilis.com>
 # Cookbook Name:: sbp_chef_embedded
-# Recipe:: default
+# Attribute:: default
 #
 # Copyright 2014, Schuberg Philis
 #
@@ -18,18 +17,4 @@
 # limitations under the License.
 #
 
-if node['chef_embedded']['enabled'] && not platform_family?('windows')
-  if platform_family?('mac_os_x')
-    template '/etc/paths.d/chef-embedded-bin.sh' do
-      source 'chef-embedded-bin.sh.erb'
-      mode 0644
-      variables(:embedded_dir => Chef::Config.embedded_dir)
-    end
-  else
-    template '/etc/profile.d/chef-embedded-bin.sh' do
-      source 'chef-embedded-bin.sh.erb'
-      mode 0644
-      variables(:embedded_dir => Chef::Config.embedded_dir)
-    end
-  end
-end
+default['chef_embedded']['enabled'] = true
