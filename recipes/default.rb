@@ -18,7 +18,7 @@
 # limitations under the License.
 #
 
-if node['chef_embedded']['enabled'] && not platform_family?('windows')
+if node['chef_embedded']['enabled'] && (not platform_family?('windows'))
   if platform_family?('mac_os_x')
     template '/etc/paths.d/chef-embedded-bin.sh' do
       source 'chef-embedded-bin.sh.erb'
